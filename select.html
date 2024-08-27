@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-img-top {
+            width: 100px;
+            height: 100px;
+           
+            margin: 0 auto;
+        }
+
+    </style>
+    <style>
+        /* Background and text colors */
+        body {
+            perspective: 1000px;
+            background: linear-gradient(135deg, #e2e2e2, #ffffff); /* Gradient background for the body */
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Container styles */
+        .container {
+            background: #ffffff; /* White background for the container */
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            transform-style: preserve-3d;
+            border: 1px solid #ddd;
+        }
+    
+        /* Card image styles */
+        .card-img-top {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+    
+        /* Card styles */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f8f9fa; /* Light grey background for cards */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform-style: preserve-3d;
+        }
+    
+        /* Card hover effect */
+        .card:hover {
+            transform: rotateY(10deg) translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    
+        /* Card body styles */
+        .card-body {
+            padding: 1.25rem;
+        }
+    
+        /* Card title styles */
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007bff; /* Blue color for the title */
+        }
+    
+        /* Card text styles */
+        .card-text {
+            font-size: 1rem;
+            color: #555; /* Darker grey for text */
+            margin-bottom: 0.5rem;
+        }
+    
+        /* Row and column styles */
+        .row {
+            margin: 0 -15px;
+        }
+    
+        .col-md-4 {
+            padding: 0 15px;
+        }
+    
+        /* Footer styles if you have one */
+        footer {
+            background: #007bff;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+    </style>
+    
+    
+    
+</head>
+<body>
+    <div id="mobileDisplay" class="container">
+        <div class="row">
+            <!-- Mobile details will be injected here -->
+        </div>
+    </div>
+    
+    <script>
+        // Mobile data with new brands
+        const data = {
+            "mobiles": [
+                {
+                    "name": "iPhone 14 Pro",
+                    "brand": "Apple",
+                    "price": 999,
+                    "specifications": {
+                        "display": "6.1 inches",
+                        "processor": "A16 Bionic",
+                        "ram": "6GB",
+                        "battery": "3095mAh"
+                    },
+                    "image": "ihone.jpg"
+                },
+                {
+                    "name": "Key2",
+                    "brand": "Blackberry",
+                    "price": 649,
+                    "specifications": {
+                        "display": "4.5 inches",
+                        "processor": "Snapdragon 660",
+                        "ram": "6GB",
+                        "battery": "3500mAh"
+                    },
+                    "image": "bb.jpg"
+                },
+                {
+                    "name": "Find X5 Pro",
+                    "brand": "Oppo",
+                    "price": 799,
+                    "specifications": {
+                        "display": "6.7 inches",
+                        "processor": "Snapdragon 8 Gen 1",
+                        "ram": "8GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "opo.jpg"
+                },
+                {
+                    "name": "Realme GT 2 Pro",
+                    "brand": "Realme",
+                    "price": 699,
+                    "specifications": {
+                        "display": "6.7 inches",
+                        "processor": "Snapdragon 8 Gen 1",
+                        "ram": "8GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "realme.jpg"
+                },
+                {
+                    "name": "Galaxy S22 Ultra",
+                    "brand": "Samsung",
+                    "price": 1199,
+                    "specifications": {
+                        "display": "6.8 inches",
+                        "processor": "Exynos 2200",
+                        "ram": "12GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "Samsung.jpg"
+                },
+                {
+                    "name": "G50",
+                    "brand": "Nokia",
+                    "price": 249,
+                    "specifications": {
+                        "display": "6.82 inches",
+                        "processor": "MediaTek Helio G25",
+                        "ram": "4GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "Nokia.jpg"
+                },
+                {
+                    "name": "Moto G Power",
+                    "brand": "Motorola",
+                    "price": 299,
+                    "specifications": {
+                        "display": "6.6 inches",
+                        "processor": "Snapdragon 662",
+                        "ram": "4GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "Motorola.jpg"
+                },
+                {
+                    "name": "OnePlus 10 Pro",
+                    "brand": "OnePlus",
+                    "price": 899,
+                    "specifications": {
+                        "display": "6.7 inches",
+                        "processor": "Snapdragon 8 Gen 1",
+                        "ram": "8GB",
+                        "battery": "5000mAh"
+                    },
+                    "image": "Oneplus.jpg"
+                },
+                {
+                    "name": "Vivo X70 Pro",
+                    "brand": "Vivo",
+                    "price": 799,
+                    "specifications": {
+                        "display": "6.56 inches",
+                        "processor": "Dimensity 1200",
+                        "ram": "12GB",
+                        "battery": "4450mAh"
+                    },
+                    "image": "Vivo.jpg"
+                }
+            ]
+        };
+    
+        function displayMobiles() {
+            let mobileDisplay = '';
+            data.mobiles.forEach(function(mobile) {
+                mobileDisplay += `
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="${mobile.image}" alt="${mobile.name}" class="card-img-top img-fluid">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${mobile.name}</h5>
+                            <p class="card-text">${mobile.brand}</p>
+                            <p class="card-text">$${mobile.price}</p>
+                            <p class="card-text">${mobile.specifications.display}</p>
+                            <p class="card-text">${mobile.specifications.processor}</p>
+                            <p class="card-text">${mobile.specifications.ram} RAM</p>
+                            <p class="card-text">${mobile.specifications.battery} Battery</p>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            document.querySelector('#mobileDisplay .row').innerHTML = mobileDisplay;
+        }
+    
+        // Call the function to display the mobile data
+        displayMobiles();
+    </script>
+    
+</body>
+</html>
